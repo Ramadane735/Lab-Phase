@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touba Fashion Store - Vêtements tendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Touba Fashion Store </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Rechercher des produits...">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li class="category-filter">
+                    <select id="categoryFilter">
+                        <option value="all">Toutes catégories</option>
+                    </select>
+                </li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="user-section">
+                <button id="authButton">Connexion</button>
+                <div class="cart-icon">🛒<span class="cart-count">0</span></div>
+            </div>
+
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <section class="product-grid" id="products">
+            <!-- Les produits seront injectés par JavaScript -->
+        </section>
+
+        <!-- Contrôles de pagination -->
+        <div class="pagination-controls">
+            <button id="prevPage">Précédent</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage">Suivant</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <ul>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Aide</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Retours & Échanges</a></li>
+                    <li><a href="#">Livraison</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Réseaux sociaux</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 Touba Fashion Store. Tous droits réservés - Créé avec ❤️ par [Mouhamadou M.R. Gueye]</p>
+            <p>Conditions générales de vente - Politique de confidentialité</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Connexion/Inscription</h2>
+            <form id="authForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+                <button type="button" id="switchForm">Créer un compte</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Paiement sécurisé</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="cardNumber">Numéro de carte</label>
+                    <input type="text" id="cardNumber" pattern="\d{16}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiryDate">Date d'expiration (MM/AA)</label>
+                    <input type="text" id="expiryDate" placeholder="MM/AA" pattern="\d{2}/\d{2}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cvv">Code de sécurité (CVV)</label>
+                    <input type="text" id="cvv" pattern="\d{3}" required>
+                </div>
+                
+                <button type="submit">Payer maintenant</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
